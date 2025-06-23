@@ -1,0 +1,42 @@
+.contact-section {
+  background-color: #121212;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  color: #00aaff;
+  margin-bottom: 40px;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #00bfff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: #ff9800;
+}
+
+.download-button {
+  padding: 10px 20px;
+  background-color: #00BFFF;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px; 
+}
