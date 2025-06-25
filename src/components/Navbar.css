@@ -4,25 +4,62 @@
   top: 0;
   left: 0;
   background-color: #121212;
-  padding: 20px 80px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.name {
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.tooltip-image {
+  visibility: hidden;
+  width: 150px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.tooltip-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.tooltip:hover .tooltip-image {
+  visibility: visible;
+}
+
+/* Nav links */
 .navbar-right {
   display: flex;
-  gap: 50px;
-  flex-wrap: nowrap;
+  gap: 30px;
 }
 
 .navbar-right a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   position: relative;
   transition: 0.3s;
 }
@@ -46,38 +83,35 @@
   color: #007ACC;
 }
 
-/* Tooltip */
-
-.name {
+/* Hamburger icon for mobile */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
   color: white;
-  font-size: 1.8rem;
   cursor: pointer;
-  position: relative;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
 
-.tooltip-image {
-  visibility: hidden;
-  width: 150px;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 8px;
-  z-index: 1;
-  transition: visibility 0.3s ease;
-}
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    background-color: #121212;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
 
-.tooltip-image img {
-  width: 100%;
-  border-radius: 8px;
-}
+  .navbar-right.active {
+    display: flex;
+  }
 
-.tooltip:hover .tooltip-image {
-  visibility: visible;
+  .navbar {
+    padding: 15px 20px;
+  }
 }
